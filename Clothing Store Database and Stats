@@ -1,0 +1,22 @@
+--Create a clothing store database
+
+CREATE TABLE clothing_store(id INTEGER PRIMARY KEY, item TEXT, color TEXT, quantity INTEGER, price INTEGER);
+INSERT INTO clothing_store VALUES (1, "tshirt", "blue", 13, 15); 
+INSERT INTO clothing_store VALUES (2, "long_sleeve", "green", 11, 25);
+INSERT INTO clothing_store VALUES (3, "baseball_tee", "orange", 8, 20);
+INSERT INTO clothing_store VALUES (4, "shorts", "blue", 10, 30);
+INSERT INTO clothing_store VALUES (5, "joggers", "green", 13, 35);
+INSERT INTO clothing_store VALUES (6, "jeans", "blue", 18, 40);
+
+
+--display the database ordered by price
+SELECT * FROM clothing_store
+ORDER BY price;
+
+--What is the sum of items at the clothing store?
+SELECT SUM(quantity) FROM clothing_store
+
+--How many blue clothing items are there in the store?
+SELECT color, SUM(quantity) FROM clothing_store
+WHERE color='blue'
+ORDER BY quantity
